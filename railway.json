@@ -1,0 +1,20 @@
+{
+  "name": "Silent WolfBot",
+  "description": "Professional WhatsApp Bot with auto-session authentication",
+  "repository": "https://github.com/7silent-wolf/silentwolf.git",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "npm install"
+  },
+  "deploy": {
+    "startCommand": "node index.js",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
+  },
+  "variables": {
+    "SESSION_ID": {
+      "description": "REQUIRED: Your session ID. Must begin with 'WOLF-BOT'",
+      "required": true
+    }
+  }
+}

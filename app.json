@@ -1,0 +1,55 @@
+
+{
+  "name": "WOLFBOT",
+  "description": "Professional WhatsApp Bot with auto-session authentication",
+  "logo": "https://i.ibb.co/zWGkw7Jz/767022de0778.png",
+  "keywords": ["whatsapp", "bot", "wolfbot", "baileys", "session"],
+  "repository": "https://github.com/sil3nt-wolf/silentwolf.git",
+  "scripts": {
+    "start": "node --no-warnings --experimental-global-webcrypto index.js"
+  },
+  "env": {
+    "SESSION_ID": {
+      "description": "REQUIRED: Your WhatsApp session ID. Must begin with 'WOLF-BOT:'",
+      "value": "",
+      "required": true
+    },
+    "DATABASE_URL": {
+      "description": "OPTIONAL: PostgreSQL connection string for persistent storage. Supports Heroku Postgres, Supabase, Neon, Railway, etc. Format: postgres://user:password@host:5432/dbname?sslmode=require — Leave blank to run on SQLite only.",
+      "value": "",
+      "required": false
+    },
+    "PTERODACTYL_KEY": {
+      "description": "OPTIONAL: Your Pterodactyl Application API key (ptlc_...). Only needed if you use panel commands.",
+      "value": "",
+      "required": false
+    },
+    "PTERODACTYL_URL": {
+      "description": "OPTIONAL: Your Pterodactyl panel URL (e.g. https://panel.example.com). Only needed if you use panel commands.",
+      "value": "",
+      "required": false
+    },
+    "PAYSTACK_KEY": {
+      "description": "OPTIONAL: Your Paystack secret key (sk_live_... or sk_test_...). Only needed for M-Pesa STK push payments.",
+      "value": "",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ]
+}

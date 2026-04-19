@@ -1,0 +1,109 @@
+{
+  "name": "silent-wolf-bot",
+  "version": "2.1.0",
+  "description": "A WhatsApp bot using Baileys with auto-restart prefix system and heartbeat monitor",
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "baileys",
+    "silent-wolf",
+    "auto-restart",
+    "prefix",
+    "heartbeat",
+    "monitor",
+    "session-protection"
+  ],
+  "homepage": "https://github.com/Silent-Wolf7/Silentwolf#readme",
+  "bugs": {
+    "url": "https://github.com/Silent-Wolf7/Silentwolf/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Silent-Wolf7/silentwolf.git"
+  },
+  "license": "MIT",
+  "author": "7silent-wolf",
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "postinstall": "node scripts/patch-modules.cjs 2>/dev/null || true",
+    "start": "node --no-warnings --expose-gc --max-old-space-size=1024 --max-semi-space-size=64 --experimental-global-webcrypto index.js",
+    "deploy": "node restart.js",
+    "auto": "node auto_restart.js",
+    "restart": "restart_wrapper.bat",
+    "bot": "node --no-warnings index.js",
+    "setup": "node setup_prefix.js",
+    "windows": "restart_wrapper.bat",
+    "linux": "./restart_wrapper.sh",
+    "dev": "node --no-warnings index.js",
+    "install-deps": "npm install",
+    "test": "echo \"No tests specified\" && exit 0",
+    "logs": "type bot_restart.log",
+    "status": "node check_status.js",
+    "heartbeat": "node heartbeat.js",
+    "monitor": "node heartbeat.js",
+    "start:full": "node heartbeat.js & node index.js",
+    "start:monitored": "concurrently \"node heartbeat.js\" \"node index.js\"",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:restart": "pm2 restart ecosystem.config.js",
+    "pm2:logs": "pm2 logs",
+    "pm2:status": "pm2 status",
+    "session:check": "node scripts/check-session.js",
+    "session:backup": "node scripts/backup-session.js",
+    "session:restore": "node scripts/restore-session.js",
+    "health": "node scripts/health-check.js",
+    "diagnose": "node scripts/diagnose.js",
+    "clean": "node scripts/cleanup.js",
+    "stats": "node scripts/show-stats.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@hapi/boom": "^10.0.1",
+    "@iamtraction/google-translate": "^2.0.1",
+    "@whiskeysockets/baileys": "^7.0.0-rc.9",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.13.6",
+    "baileys": "^7.0.0-rc.9",
+    "better-sqlite3": "^12.8.0",
+    "chalk": "^4.1.2",
+     "mumaker": "latest",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "file-type": "^21.3.1",
+    "form-data": "^4.0.5",
+    "gifted-btns": "^1.0.2",
+    "glob": "^11.1.0",
+    "jsdom": "^27.4.0",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.6.0",
+    "node-cache": "^5.1.2",
+    "node-fetch": "^3.3.2",
+    "node-schedule": "^2.1.1",
+    "node-webpmux": "^3.2.1",
+    "openai": "^6.27.0",
+    "pino": "^8.21.0",
+    "qrcode-terminal": "^0.12.0",
+    "ruhend-scraper": "^9.0.8",
+    "sql.js": "^1.14.1",
+    "systeminformation": "^5.31.4",
+    "ws": "^8.19.0"
+  },
+  "optionalDependencies": {
+    "canvas": "^3.2.1",
+    "formdata-node": "^6.0.3",
+    "qrcode": "^1.5.4",
+    "yt-search": "^2.13.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.14",
+    "pm2": "^5.4.3"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
