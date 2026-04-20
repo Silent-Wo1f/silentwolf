@@ -1,4 +1,4 @@
-//Inner Peace -- Silent Wolf
+//Inner Peace -- Silent Wolf.
 
 
 
