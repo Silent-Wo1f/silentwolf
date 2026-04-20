@@ -20,7 +20,7 @@
       "required": false
     },
     "PTERODACTYL_KEY": {
-      "description": "OPTIONAL: Your Pterodactyl Application API key (ptlc_...). Only needed if you use panel commands.",
+      "description": "OPTIONAL: Your Pterodactyl Application API key (ptlc_..). Only needed if you use panel commands.",
       "value": "",
       "required": false
     },
