@@ -171,7 +171,7 @@ WOLFBOT runs on all major platforms:
 
 - 🌍 [Deploy WOLFBOT](https://inspiring-genie-ebae09.netlify.app/)
 - 🔑 [Get Session Pair Code](https://7-w.vercel.app/wolf.html)
-- 📦 [Download ZIP](https://github.com/Silent-Wo1f/silentwolf/archive/refs/heads/main.zip)
+- 📦 [Download ZIP](https://github.com/SilentWolf-Kenya/silentwolf/archive/refs/heads/main.zip)
 - 🐙 [GitHub Repository](https://github.com/Silent-Wo1f/silentwolf)
 
 ---
